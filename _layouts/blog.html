@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }} - Jared Rigby</title>
+    <link rel="stylesheet" href="/css/style.css">
+    {% include favicon.html %}
+  </head>
+  <body>
+    
+    {% include header.html %} 
+
+    <div class="title">
+      <div class="wrapper">
+        <h1 class="title__main">{{ page.title }}</h1>
+      </div>
+    </div>
+
+
+    {{ content }}
+    
+    <div class="wrapper wrapper--content">
+      <ul class="posts">
+          {% for post in site.posts %}
+          <li class="post__item">
+              <a href="{{ post.url }}" class="post__link">{{ post.title }}</a>
+              <br>
+              <small class="post__date">{{ post.date | date: '%B %d, %Y' }}</small>
+              <br>
+              <br>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+    
+    {% include footer.html %}
+
+  </body>
+</html>

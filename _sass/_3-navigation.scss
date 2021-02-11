@@ -1,0 +1,50 @@
+.section-nav {
+    font-weight: bold;
+
+    &--cs {
+        background: $cs;
+    }
+
+    &--projects {
+        background: $make;
+    }
+
+    &--hacking {
+        background: $hack;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        margin: auto;
+        justify-content: flex-end;
+        padding-top: $pad*0.75;
+        padding-bottom: $pad*0.75;
+
+        @media screen and (max-width: 800px) {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-weight: bold;
+        color: $black;
+
+        &:not(first-child) {
+            margin-left: $pad;
+        }
+
+
+        @media screen and (max-width: 800px) {
+            margin: 0 $pad/2;
+            display: block;
+            text-align: center;
+
+            &:not(first-child) {
+                margin-left: $pad/2;
+            }
+        }
+    }
+}
